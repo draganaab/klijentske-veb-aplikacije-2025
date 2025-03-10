@@ -1,0 +1,36 @@
+<section fxLayout="column" fxLayoutAlign="center center">
+    <mat-card *ngIf="this.cart == null || this.cart.list.length == 0 || this.cart == undefined ">
+        <mat-card-header>
+
+        </mat-card-header>
+        <mat-card-content>
+            <h2>Shoping cart is empty</h2>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card class="parentItemCard" fxLayout="column" fxLayoutAlign="center center" *ngIf="this.cart != null && this.cart.list.length != 0 &&  this.cart != undefined">
+        <mat-card-header>
+            Your shoping cart
+        </mat-card-header>
+        <mat-card-content fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="1rem">
+            <mat-card class="ItemCard" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="1rem" [id]="i" *ngFor="let item of cart.list; let i = index">
+                <mat-card-content fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="1rem">
+                    <img mat-card-image [src]="'../../../../' + item.item.imageSrc" [alt]="item.item.name">
+                    <h3>{{ item.item.name }}</h3>
+                    <h3>Seat: {{ item.seat }}</h3>
+                    <h3>Quantity: {{ item.quantity }}</h3>
+                    <h3>Price: {{ formatToTwoDecimal(item.price * item.quantity) }} rsd</h3>
+                </mat-card-content>
+                <mat-card-actions fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="1rem">
+                    <button (click)="removeOneItem(item, i)" mat-raised-button color="warn">Remove one item</button>
+                    <button (click)="removeAllItem(item, i)" mat-raised-button color="warn">Remove all items</button>
+                </mat-card-actions>
+            </mat-card>
+            <h3>Total price: {{ formatToTwoDecimal(fullPriceCart(this.cart)) }} rsd</h3>
+        </mat-card-content>
+        <mat-card-actions fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="1rem">
+            <button (click)="OrderCart()" mat-raised-button color="warn">Order</button>
+        </mat-card-actions>
+    </mat-card>
+
+</section>

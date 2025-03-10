@@ -1,0 +1,52 @@
+
+<section class="signup-container">
+    <mat-card class="signup-card">
+        <mat-card-content>
+            <form #f="ngForm" (ngSubmit)="onSubmit(f)" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="1rem">
+                <h1 class="neon-text">🎟️ Create an Account</h1>
+
+                <mat-form-field appearance="outline" class="custom-input">
+                    <mat-label>Full Name</mat-label>
+                    <input type="text" matInput name="name" ngModel required #nameInput="ngModel">
+                    <mat-error *ngIf="nameInput.hasError('required')">Field should not be empty!</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="custom-input">
+                    <mat-label>Phone Number</mat-label>
+                    <input type="text" matInput name="phoneNum" ngModel required #phoneNumInput="ngModel">
+                    <mat-error *ngIf="phoneNumInput.hasError('required')">Field should not be empty!</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="custom-input">
+                    <mat-label>Email</mat-label>
+                    <input type="email" matInput name="email" email ngModel required #emailInput="ngModel">
+                    <mat-error *ngIf="emailInput.hasError('required')">Field should not be empty!</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="custom-input">
+                    <mat-label>Password</mat-label>
+                    <input type="password" matInput name="password" ngModel required minlength="8" #passInput="ngModel">
+                    <mat-hint align="end">{{ passInput.value?.length || 0 }} / 8</mat-hint>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="custom-input">
+                    <mat-label>Address</mat-label>
+                    <input type="text" matInput name="address" ngModel required #addressInput="ngModel">
+                    <mat-error *ngIf="addressInput.hasError('required')">Field should not be empty!</mat-error>
+                </mat-form-field>
+
+                <mat-checkbox class="acceptance" color="primary" name="acceptance" #acceptInput="ngModel" ngModel required>
+                    I accept the terms and conditions.
+                </mat-checkbox>
+                <mat-error *ngIf="acceptInput.hasError('required')">You must accept the terms to proceed.</mat-error>
+
+                <button type="submit" mat-raised-button color="accent" class="neon-button">🎬 Sign Up</button>
+
+                <p class="login-link">
+                    Already have an account? <a routerLink="/login" class="neon-link">Log in</a>
+                </p>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</section>
+

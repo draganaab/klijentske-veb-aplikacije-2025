@@ -1,0 +1,21 @@
+section{
+    margin-top:7rem;
+    margin-bottom: 7rem;
+}
+
+.parentItemCard{
+    width:70%;
+}
+
+img{
+    width: 10rem;
+}
+
+.parentItemCard>mat-card-content, .parentItemCard>mat-card-content>mat-card>mat-card-content{
+    padding: 1rem;
+    width:90%;
+}
+
+.ItemCard{
+    background-color: rgb(58, 57, 57);
+}

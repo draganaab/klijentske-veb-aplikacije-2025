@@ -1,0 +1,7 @@
+.sizes{
+    min-width: 5rem;
+}
+
+form > * {
+    margin-bottom: 15px;
+}

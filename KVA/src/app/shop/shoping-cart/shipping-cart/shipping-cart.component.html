@@ -1,0 +1,39 @@
+<section fxLayout="column" fxLayoutAlign="center center">
+    <mat-card *ngIf="this.orders == null || this.orders.length == 0 || this.orders == undefined ">
+        <mat-card-header>
+
+        </mat-card-header>
+        <mat-card-content fxLayoutAlign="center center">
+            <h2>No orders on the way</h2>
+        </mat-card-content>
+    </mat-card>
+    <div class="listOfCarts" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="1rem" *ngIf="this.orders != null && this.orders.length != 0 &&  this.orders != undefined">
+        <h2>Your orders on the way</h2>
+        <mat-card fxLayout="column" fxLayoutAlign="center center" *ngFor="let order of this.orders">
+            <mat-card-header>
+                
+            </mat-card-header>
+            <mat-card-content fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="1rem">
+                <mat-card class="ItemCard" fxLayout="row wrap" fxLayoutAlign="space-between" fxLayoutGap="1rem" [id]="i"
+                    *ngFor="let item of order.list; let i = index">
+                    <mat-card-content fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="1rem">
+                        <img mat-card-image [src]="'../../../../' + item.item.imageSrc" [alt]="item.item.name">
+                        <h3>{{ item.item.name }}</h3>
+                        <h3>Seat: {{ item.seat }}</h3>
+                        <h3>Quantity: {{ item.quantity }}</h3>
+                        <h3>Price: {{ formatToTwoDecimal(item.price * item.quantity) }} rsd</h3>
+                    </mat-card-content>
+                </mat-card>
+                <h3>Total price: {{ formatToTwoDecimal(fullPriceCart(order)) }} rsd</h3>
+                <!-- <div fxLayout="column" fxLayoutAlign="center center">
+                    <h3>Arrival time progress</h3>
+                    <mat-progress-bar #progressBar [id]="'progressBar' + order.id" mode="determinate" [value]="0" color="accent"></mat-progress-bar>
+                </div> -->
+            </mat-card-content>
+            <mat-card-actions fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="1rem">
+                <button (click)="cancel(order)" mat-raised-button color="warn">Cancel order</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+
+</section>

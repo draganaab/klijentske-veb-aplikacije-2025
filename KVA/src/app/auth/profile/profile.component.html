@@ -1,0 +1,87 @@
+<div fxLayoutAlign="space-between">
+    <button mat-icon-button [mat-dialog-close]="true">
+        <mat-icon matListIcon>
+            close
+        </mat-icon>
+    </button>
+
+    <button mat-icon-button (click)="enableEdit()">
+        <mat-icon matListIcon *ngIf="this.profileForInput.id == this.userService.currentUser.id"
+        (click)="this.isEditing = !this.isEditing">
+            edit
+        </mat-icon>
+    </button>
+</div>
+
+<mat-dialog-content>
+    <form fxLayout="column" fxLayoutGap="1rem" #editForm="ngForm" (ngSubmit)="finishEditing(editForm)">
+        <mat-card>
+            <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="1rem">
+                <mat-icon>badge</mat-icon>
+                <div fxLayout="column">
+                    <span  *ngIf="!this.isEditing">{{ this.profileForInput.name }}</span>
+                    <mat-form-field *ngIf="this.isEditing">
+                        <input type="text" [(ngModel)]="this.profileForInput.name" matInput placeholder="First and last name" name="name"  ngModel required="" #nameInput="ngModel">
+                        <mat-error *ngIf="nameInput.hasError('required')">Field should not be empty!</mat-error>
+                    </mat-form-field>
+                    <span color="warn" *ngIf="errorExists && this.isEditing" color="warn">{{ errorNameText }}</span>
+                </div>
+            </div>
+        </mat-card>
+
+        <mat-card>
+            <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="1rem">
+                <mat-icon>call</mat-icon>
+                <div fxLayout="column">
+                    <span  *ngIf="!this.isEditing">{{ this.profileForInput.phoneNum }}</span>
+                    <mat-form-field *ngIf="this.isEditing">
+                        <input type="text" [(ngModel)]="this.profileForInput.phoneNum" matInput placeholder="Phone number" name="phoneNum" ngModel required="" #phoneNumInput="ngModel">
+                        <mat-error *ngIf="phoneNumInput.hasError('required')">Field should not be empty!</mat-error>
+                    </mat-form-field>
+                    <span *ngIf="errorExists && this.isEditing" color="warn">{{ errorPhoneNumText }}</span>
+                </div>
+            </div>
+        </mat-card>
+
+        <mat-card *ngIf="this.isEditing">
+            <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="1rem">
+                <mat-icon>lock</mat-icon>
+                <div fxLayout="column">
+                    <mat-form-field>
+                        <input type="password" matInput placeholder="Your old password" name="oldPassword" ngModel required="" #passInput="ngModel" minlength="8">
+                        <mat-hint align="end">{{ passInput.value?.length}} / 8</mat-hint>
+                    </mat-form-field>
+                    <span *ngIf="errorExists && this.isEditing" color="warn">{{ errorPasswordValid }}</span>
+                </div>
+            </div>
+        </mat-card>
+
+        <mat-card *ngIf="this.isEditing">
+            <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="1rem">
+                <mat-icon>lock</mat-icon>
+                <div fxLayout="column">
+                    <mat-form-field >
+                        <input type="password" matInput placeholder="Your new password" name="newPassword" ngModel required="" #passInput="ngModel" minlength="8">
+                        <mat-hint align="end">{{ passInput.value?.length}} / 8</mat-hint>
+                    </mat-form-field>
+                    <span *ngIf="errorExists && this.isEditing" color="warn">{{ errorPasswordText }}</span>
+                </div>
+            </div>
+        </mat-card>
+
+        <mat-card>
+            <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="1rem">
+                <mat-icon>location_on</mat-icon>
+                <div fxLayout="column">
+                    <span  *ngIf="!this.isEditing">{{ this.profileForInput.name }}</span>
+                    <mat-form-field *ngIf="this.isEditing">
+                        <input type="text" [(ngModel)]="this.profileForInput.address" matInput placeholder="Address" name="address" ngModel required="" #addressInput="ngModel">
+                    </mat-form-field>
+                    <span *ngIf="errorExists && this.isEditing" color="warn">{{ errorAddressText }}</span>
+                </div>
+            </div>
+        </mat-card>
+
+        <button type="submit" *ngIf="this.isEditing" mat-raised-button color="primary">Save user</button>
+    </form>
+</mat-dialog-content>

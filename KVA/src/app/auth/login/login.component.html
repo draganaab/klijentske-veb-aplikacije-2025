@@ -1,0 +1,27 @@
+<section class="login-container">
+    <mat-card class="login-card">
+        <mat-card-content>
+            <form #f="ngForm" (ngSubmit)="onSubmit(f)" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="1rem">
+                <h1 class="neon-text">🎥 Welcome Back</h1>
+
+                <mat-form-field appearance="outline" class="custom-input">
+                    <mat-label>Email</mat-label>
+                    <input type="email" matInput name="email" ngModel required #emailInput="ngModel">
+                    <mat-error *ngIf="emailInput.hasError('required')">Field should not be empty</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="custom-input">
+                    <mat-label>Password</mat-label>
+                    <input type="password" matInput name="password" ngModel required minlength="8" #passInput="ngModel">
+                    <mat-hint align="end">{{ passInput.value?.length || 0 }} / 8</mat-hint>
+                </mat-form-field>
+
+                <button type="submit" mat-raised-button color="accent" class="neon-button">🎬 Log in</button>
+                
+                <p class="signup-link">
+                    Don't have an account? <a routerLink="/signup" class="neon-link">Sign up</a>
+                </p>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</section>

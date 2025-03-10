@@ -1,0 +1,40 @@
+.cards{
+    max-width:100%;
+    min-height: 100%;
+    padding-bottom: 1.5rem;
+}
+.cards>mat-card{
+    margin-top:2rem;
+    width:20rem;
+    height:37rem
+}
+
+.cards>mat-card>mat-card-content>img{
+    width:288px;
+}
+
+mat-card-actions{
+    width: 100%;
+}
+
+form{
+    width: 100%;
+}
+
+button{
+    height:60px;
+    width: 30px;
+}
+
+.mat-icon {
+    height: 2rem;
+    width: 4rem;
+    font-size: 25px;
+}
+
+/* :host ::ng-deep  
+    .p-rating-icon:not(.p-rating-cancel), 
+:host ::ng-deep  
+    .p-rating-icon:not(.p-rating-cancel):hover { 
+    color: green !important; 
+} */

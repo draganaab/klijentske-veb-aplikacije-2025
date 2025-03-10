@@ -1,0 +1,11 @@
+<div class="welcome-container" fxLayout="column" fxLayoutAlign="center center">
+    <div class="slideshow" #slideVal fxLayoutGap="0rem" fxLayout="row" fxLayoutAlign="start center">
+        <div fxHide.lt-md class="slide" *ngFor="let image of visibleImages">
+            <img class="images" [src]="image" alt="Slideshow Image">
+        </div>
+    </div>
+    <div class="welcome-text" fxLayout="column" fxLayoutAlign="center center">
+        <h1>Najjaci Bioskop</h1>
+        <p>Rezervisi odmah</p>
+    </div>
+</div>

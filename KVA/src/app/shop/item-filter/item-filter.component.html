@@ -1,0 +1,79 @@
+<section fxLayout="column" fxLayoutAlign="center center">
+    <form fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="1rem" #filter="ngForm"
+        (ngSubmit)="onSubmit(filter)">
+
+        <mat-form-field>
+            <input type="text" matInput placeholder="Movie name" name="name" ngModel #nameInput="ngModel">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input type="text" matInput placeholder="Director" name="director" ngModel #directorInput="ngModel">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input type="text" matInput placeholder="Description" name="description" ngModel #directorInput="ngModel">
+        </mat-form-field>
+
+
+        <mat-card class="select-card">
+            <mat-card-header><h3>User ratings</h3></mat-card-header>
+            <mat-card-content fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="1rem">
+                <mat-form-field>
+                    <mat-label>Min. user ratings</mat-label>
+                    <mat-select name="minRating" ngModel #minRatingInput="ngModel">
+                        <mat-option value="1">1</mat-option>
+                        <mat-option value="2">2</mat-option>
+                        <mat-option value="3">3</mat-option>
+                        <mat-option value="4">4</mat-option>
+                        <mat-option value="5">5</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Max. user ratings</mat-label>
+                    <mat-select name="maxRating" ngModel #maxRatingInput="ngModel">
+                        <mat-option value="1">1</mat-option>
+                        <mat-option value="2">2</mat-option>
+                        <mat-option value="3">3</mat-option>
+                        <mat-option value="4">4</mat-option>
+                        <mat-option value="5">5</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </mat-card-content>
+        </mat-card>
+
+        <mat-card class="select-card">
+            <mat-card-header><h3>Produsct release date</h3></mat-card-header>
+            <mat-card-content fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="1rem">
+                <mat-form-field>
+                    <mat-label>From:</mat-label>
+                    <input matInput [matDatepicker]="pickerFrom" name="fromDate" ngModel>
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="pickerFrom"></mat-datepicker-toggle>
+                    <mat-datepicker #pickerFrom></mat-datepicker>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>To:</mat-label>
+                    <input matInput [matDatepicker]="pickerTo" name="toDate" ngModel>
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="pickerTo"></mat-datepicker-toggle>
+                    <mat-datepicker #pickerTo></mat-datepicker>
+                </mat-form-field>
+            </mat-card-content>
+        </mat-card>
+
+        <mat-button-toggle-group class="types" name="type" aria-label="Types" ngModel multiple>
+            <mat-button-toggle *ngFor="let type of typeList" [value]="type">
+                {{ type }}
+            </mat-button-toggle>
+        </mat-button-toggle-group>
+
+        <mat-button-toggle-group class="prices" name="price" aria-label="Prices" ngModel multiple>
+            <mat-button-toggle *ngFor="let price of priceList" [value]="price">
+                {{ price }}
+            </mat-button-toggle>
+        </mat-button-toggle-group>
+        
+
+        <button type="submit" mat-raised-button color="warn">submit</button>
+    </form>
+</section>
