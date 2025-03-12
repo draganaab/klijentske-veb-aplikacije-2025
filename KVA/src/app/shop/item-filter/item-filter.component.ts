@@ -52,6 +52,17 @@ export class ItemFilterComponent {
         }
       });
     }
+    if(form.value.director==""){
+      counter++;
+    }else{
+      if(counter ==1){this.filteredItems = this.items}
+      this.items.forEach(element => {
+        if(element.director.toLowerCase().includes(form.value.director.toLowerCase())){
+          this.filteredItems.push(element);
+        }
+      });
+    }
+    
 
     if(form.value.minRating=="" && form.value.maxRating==""){
       counter++;
@@ -96,6 +107,17 @@ export class ItemFilterComponent {
       this.filteredItems = tempFilteredItems;
     }
 
+    if(form.value.description==""){
+      counter++;
+    }else{
+      if(counter ==5){this.filteredItems = this.items}
+      this.items.forEach(element => {
+        if(element.desc.toLowerCase().includes(form.value.description.toLowerCase())){
+          this.filteredItems.push(element);
+        }
+      });
+    }
+
 
     if(form.value.price==""){
       counter++;
@@ -110,6 +132,9 @@ export class ItemFilterComponent {
       });
       this.filteredItems = tempFilteredItems;
     }
+
+    console.log(counter);
+
 
     if(counter==7){
       this.filteredItems = this.items

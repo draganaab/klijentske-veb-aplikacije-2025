@@ -121,7 +121,7 @@ export class ShopCartService implements OnInit{
 
     findPrice(item: Item, seat: string): number {
         let price!: number;
-        item.prices.forEach(obj => { if (obj.seat == seat) { price = obj.price } });
+        item.prices.forEach(obj => {console.log(obj.seat, seat); if (obj.seat == seat) { price = obj.price } });
         return price;
     }
     // fullPriceCart(cart: Cart): number{

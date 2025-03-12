@@ -5,7 +5,7 @@
         <mat-card-content [attr.id]="'item-content-' + item.id" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px">
             <img mat-card-image [src]="'../../../' + item.imageSrc" alt="Photo of a Shiba Inu">
             <h2>{{ item.name }}</h2>
-            <h3>{{ selectedSizePrice[0] !== null && selectedSizePrice[1] === 'item-content-' + item.id ? formatToTwoDecimal(selectedSizePrice[0]) + ' rsd' : 'Select a size' }}</h3>
+            <h3>{{ selectedSizePrice[0] !== null && selectedSizePrice[1] === 'item-content-' + item.id ? formatToTwoDecimal(selectedSizePrice[0]) + ' rsd' : 'Select the seat plan' }}</h3>
             <p-rating [stars]="5" iconCancelClass="pi pi-times" [ngModel]="getRating(item)" [readonly]="true"
                 [cancel]="false" />
         <div fxLayout="row">
@@ -17,8 +17,8 @@
         </div>
         </mat-card-content>
         <mat-card-actions fxLayout="row" fxLayoutAlign="space-between">
-            <button mat-button (click)="openComments(this.item)"><mat-icon class="icon">more_vert</mat-icon></button>
-            <button (click)="PassCartData(this.item)" mat-button><mat-icon class="icon">add_shopping_cart</mat-icon></button>
+            <button mat-button (click)="openComments(item)"><mat-icon class="icon">more_vert</mat-icon></button>
+            <button (click)="PassCartData(item)" mat-button><mat-icon class="icon">add_shopping_cart</mat-icon></button>
         </mat-card-actions>
     </mat-card>
 </div>
