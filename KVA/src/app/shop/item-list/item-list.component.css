@@ -1,40 +1,88 @@
-.cards{
-    max-width:100%;
-    min-height: 100%;
-    padding-bottom: 1.5rem;
-}
-.cards>mat-card{
-    margin-top:2rem;
-    width:20rem;
-    height:37rem
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+    background: #121212; /* Dark background */
 }
 
-.cards>mat-card>mat-card-content>img{
-    width:288px;
+mat-card {
+    width: 250px;
+    background: #1e1e1e; /* Slightly lighter dark shade */
+    color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(255, 0, 0, 0.2); /* Subtle red glow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-mat-card-actions{
+mat-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(255, 0, 0, 0.4); /* Stronger red glow */
+}
+
+mat-card img {
     width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px 12px 0 0;
 }
 
-form{
-    width: 100%;
+mat-card-content {
+    text-align: center;
+    padding: 1rem;
 }
 
-button{
-    height:60px;
-    width: 30px;
+h2 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffcc00; /* Golden color for titles */
+    text-shadow: 1px 1px 10px rgba(255, 204, 0, 0.7);
 }
 
-.mat-icon {
-    height: 2rem;
-    width: 4rem;
-    font-size: 25px;
+h3 {
+    font-size: 1rem;
+    color: #ff6666; /* Soft red for price text */
 }
 
-/* :host ::ng-deep  
-    .p-rating-icon:not(.p-rating-cancel), 
-:host ::ng-deep  
-    .p-rating-icon:not(.p-rating-cancel):hover { 
-    color: green !important; 
-} */
+p-rating {
+    margin-top: 10px;
+}
+
+mat-button-toggle-group {
+    background: transparent;
+    border-radius: 5px;
+}
+
+mat-button-toggle {
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    margin: 2px;
+    transition: all 0.3s;
+}
+
+mat-button-toggle:hover {
+    background: rgba(255, 0, 0, 0.7);
+}
+
+mat-card-actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+button {
+    background: transparent;
+    border: none;
+    color: #ffcc00;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+button:hover {
+    color: #ff6666;
+}
+
+.icon {
+    font-size: 24px;
+}

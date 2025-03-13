@@ -33,7 +33,6 @@ export class ItemListComponent implements OnInit{
 
   ngOnInit(): void {
     ShopService.itemListUpdated.subscribe(() => {
-      // ShopService.initializeItemList(this.userService);
     });
     this.getPagedItems();
   }
@@ -73,7 +72,7 @@ export class ItemListComponent implements OnInit{
     this.checkSeat = [seat, item];
     const clickedElement = event.target as HTMLElement;
     const parentCardContent = clickedElement.closest('mat-card-content');
-    
+    console.log(seat, item.prices);
     if (parentCardContent) {
       const attrId = parentCardContent.getAttribute('id');
       const selectedPrice = item.prices.find(price => price.seat === seat)!;

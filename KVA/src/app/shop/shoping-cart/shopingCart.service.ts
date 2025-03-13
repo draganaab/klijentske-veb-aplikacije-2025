@@ -46,10 +46,10 @@ export class ShopCartService implements OnInit{
         this.cartListUpdated.emit(ShopCartService.cartList);
         // console.log("lista glupa: " + this.itemWatchedList);
         setTimeout(() => {
-            const index = ShopCartService.cartList.findIndex(c => c.id === cart.id && cart.state=="sending");
+            const index = ShopCartService.cartList.findIndex(c => c.id === cart.id && cart.state=="reserved");
             if (index !== -1) {
                 ShopCartService.cartList.splice(index, 1);
-                cart.state="sent";
+                cart.state="watched";
                 ShopCartService.cartList.push(cart);
                 this.cartListUpdated.emit(ShopCartService.cartList);
                 this.ItemWatchedList.emit(ShopCartService.itemWatchedList);
@@ -66,13 +66,10 @@ export class ShopCartService implements OnInit{
         this.ItemListUpdated.emit(ShopService.itemList);
     }
 
-    // updateItemWatchedList(){
-    //     this.itemWatchedList.emit(ShopCartService.itemWatchedList);
-    // }
+
 
     static itemWatchedList: Array<timeWatched> =[]
-    states: Array<string> = ["sent", "sending", "canceled", "temp"];
-    // static cartList: Array<Cart>;
+    states: Array<string> = ["watched", "reserved", "canceled", "temp"];
 
     updateCart(user: User, item: Item, seat: string): void {
         var name: string = user.email;
@@ -113,44 +110,13 @@ export class ShopCartService implements OnInit{
         console.log(JSON.parse(test));
     }
 
-    // findPrice(item: CartItem): number{
-    //     let price!: number;
-    //     item.item.prices.forEach(obj => {if(obj.size == item.size){ price = obj.price}});
-    //     return price*item.quantity;
-    //   }
+
 
     findPrice(item: Item, seat: string): number {
         let price!: number;
-        item.prices.forEach(obj => { if (obj.seat == seat) { price = obj.price } });
+        item.prices.forEach(obj => {console.log(obj.seat, seat); if (obj.seat == seat) { price = obj.price } });
         return price;
     }
-    // fullPriceCart(cart: Cart): number{
-    //     var fullPrice: number = 0;
-    //     cart.list.forEach(item => {
-    //       const price = this.findPrice(item);
 
-    //       if (price) {
-    //         fullPrice += (price * item.quantity);
-    //       }
-    //     });
-    //     return fullPrice;
-    //   }
-
-    static cartList: Array<Cart> = [
-        // {
-        //     user: this.userService.currentUser,
-        //     list: [
-        //         {item: this.shopService.getItemById(3), size: this.shopService.getItemById(3).sizes[0], quantity:1},
-        //         {item: this.shopService.getItemById(6), size: this.shopService.getItemById(6).sizes[2], quantity:3}
-        //     ],
-        //     state: "sent"
-        // },
-        // {
-        //     user: this.userService.currentUser,
-        //     list: [
-        //         {item: this.shopService.getItemById(2), size: this.shopService.getItemById(2).sizes[0], quantity:3}
-        //     ],
-        //     state: "sending"
-        // }
-    ];
+    static cartList: Array<Cart> = [];
 }

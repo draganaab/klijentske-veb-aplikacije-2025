@@ -24,14 +24,11 @@ export class CancelledComponent {
       this.orders = cartList.filter(order => order.state === 'canceled' && order.user.email === this.user.email);
       cartList.forEach(order => { if(order.state === 'canceled' && order.user.email === this.user.email){
         this.progress.push({id: order.id, progress: 0});
-        // if(this.timeWatchedList.length > 0){
-        //   this.calculateProgress(order);
-        // }
+
       }})
     });
 
     this.orders = ShopCartService.cartList.filter(order => order.state === 'canceled' && order.user.email === this.user.email);
-    // this.cart = JSON.parse(localStorage.getItem(this.userService.currentUser.email)!);
   }
 
   formatToTwoDecimal(value: number): string {

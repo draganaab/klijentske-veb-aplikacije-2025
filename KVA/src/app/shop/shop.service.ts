@@ -96,8 +96,8 @@ export class ShopService implements OnInit{
                 releaseDate: new Date("2024-04-18"),
                 projDate: [new Date("2025-05-20"), new Date("2025-05-21")],
                 prices: [
-                    {seat: "regular", price: 800.00},
-                    {seat: "vip", price: 1200.00},
+                    {seat: "Regular", price: 800.00},
+                    {seat: "Vip", price: 1200.00},
                 ],
                 reviews: [
                     { user: userService.getUserById(1).name, review: "10/10 reccomend!!" },
@@ -114,7 +114,7 @@ export class ShopService implements OnInit{
             {
                 id: 1,
                 name: "10 Things I Hate About You",
-                type: "Romantic comedy",
+                type: "Romance",
                 desc: "10 Things I Hate About You is a romantic comedy set in a high school, where a popular student, Cameron, hires a rebellious boy, Patrick, to date the difficult Kat, so her younger sister can date. As Patrick and Kat's relationship develops, they both confront their pasts and learn about love, vulnerability, and self-discovery.",
                 imageSrc: "assets/movieImages/10things.jpg",
                 actors: ["Heath Ledger", "Julia Stiles", "Joseph Gordon-Levitt "],
@@ -124,8 +124,8 @@ export class ShopService implements OnInit{
                 releaseDate: new Date("1999-03-31"),
                 projDate: [new Date("2025-05-23"), new Date("2025-05-25")],
                 prices: [
-                    {seat: "regular", price: 800.00},
-                    {seat: "vip", price: 1200.00},
+                    {seat: "Regular", price: 800.00},
+                    {seat: "Vip", price: 1200.00},
                 ],
                 reviews: [
                     { user: userService.getUserById(1).name, review: "A witty, modern take on Shakespeare with great chemistry." },
@@ -151,8 +151,8 @@ export class ShopService implements OnInit{
             releaseDate: new Date("2007-05-04"),
             projDate: [new Date("2025-05-22"), new Date("2025-05-23")],
             prices: [
-                {seat: "regular", price: 800.00},
-                {seat: "vip", price: 1200.00},
+                {seat: "Regular", price: 800.00},
+                {seat: "Vip", price: 1200.00},
             ],
             reviews: [
                 { user: userService.getUserById(1).name, review: "A poignant, emotional story about love and memory loss." },
@@ -169,7 +169,7 @@ export class ShopService implements OnInit{
         {
             id: 3,
             name: "Barbie",
-            type: "Fantasy comedy",
+            type: "Comedy",
             desc: "The Barbie movie follows Barbie as she leaves her perfect, pink world to explore the real world, seeking self-discovery and understanding. Along the way, she confronts societal expectations, challenges stereotypes, and embarks on a journey of empowerment and personal growth.",
             imageSrc: "assets/movieImages/barbie.jpg", 
             actors: ["Margot Robbie", "Ryan Gosling", "Kate McKinnon"],
@@ -179,8 +179,8 @@ export class ShopService implements OnInit{
             releaseDate: new Date("2023-07-21"),
             projDate: [new Date("2025-04-25"), new Date("2025-05-26")],
             prices: [
-                {seat: "regular", price: 800.00},
-                {seat: "vip", price: 1200.00},
+                {seat: "Regular", price: 800.00},
+                {seat: "Vip", price: 1200.00},
             ],
             reviews: [
                 { user: userService.getUserById(1).name, review: "A fun, vibrant take on identity and self-discovery." },
@@ -196,9 +196,9 @@ export class ShopService implements OnInit{
         {
             id: 4,
             name: "Before We Go",
-            type: "Romantic drama",
+            type: "Romance",
             desc: "Before We Go follows two strangers, Nick and Brooke, who meet by chance in New York City and spend the night helping each other with personal struggles. As they share their vulnerabilities and experiences, they form a deep connection that changes their lives.",
-            imageSrc: "/assets/movieImages/beforewego.jpg", 
+            imageSrc: "assets/movieImages/beforewego.jpg",
             actors: ["Chris Evans", "Alice Eve", "Marco Rodriguez"],
             duration: "1h 30m",
             seats: ["Regular", "Vip"],
@@ -206,8 +206,8 @@ export class ShopService implements OnInit{
             releaseDate: new Date("2015-09-04"),
             projDate: [new Date("2025-06-23"), new Date("2025-07-24")],
             prices: [
-                {seat: "regular", price: 800.00},
-                {seat: "vip", price: 1200.00},
+                {seat: "Regular", price: 800.00},
+                {seat: "Vip", price: 1200.00},
             ],
             reviews: [
                 { user: userService.getUserById(1).name, review: "A charming, heartfelt romance about connection and self-discovery." },
@@ -223,7 +223,7 @@ export class ShopService implements OnInit{
         {
             id: 5,
             name: "Borat",
-             type: "Satirical mockumentary comedy",
+             type: "Comedy",
             desc: "Borat: Cultural Learnings of America for Make Benefit Glorious Nation of Kazakhstan follows the eccentric and crude journalist Borat as he travels through the United States to make a documentary about American culture. The film blends real-life interactions with scripted absurdity, satirizing social norms, politics, and cultural stereotypes in a bold and controversial way.",
             imageSrc: "assets/movieImages/borat.jpg", 
             actors: ["Sacha Baron Cohen", "Pamela Anderson", "Cathy Lady"],
@@ -233,8 +233,8 @@ export class ShopService implements OnInit{
             releaseDate: new Date("2006-11-03"),
             projDate: [new Date("2025-04-24"), new Date("2025-04-25")],
             prices: [
-                {seat: "regular", price: 800.00},
-                {seat: "vip", price: 1200.00},
+                {seat: "Regular", price: 800.00},
+                {seat: "Vip", price: 1200.00},
             ],
             reviews: [
                 { user: userService.getUserById(1).name, review: "A hilarious, controversial mockumentary that pushes boundaries." },
@@ -250,7 +250,7 @@ export class ShopService implements OnInit{
         {
             id: 6,
             name: "Challengers",
-             type: "Romantic sports drama",
+             type: "Romance",
             desc: "Challengers follows the story of a love triangle between a rising tennis player, his girlfriend, and his former best friend, who is also a rival on the court. As they navigate personal and professional challenges, their relationships are tested by competition, ambition, and the complexities of love.",
             imageSrc: "assets/movieImages/challengers.jpg", 
             actors: ["Zendaya", "Mike Faist ", "Austin Butler"],
@@ -260,8 +260,8 @@ export class ShopService implements OnInit{
             releaseDate: new Date("2023-09-15"),
             projDate: [new Date("2025-04-19"), new Date("2025-04-25")],
             prices: [
-                {seat: "regular", price: 800.00},
-                {seat: "vip", price: 1200.00},
+                {seat: "Regular", price: 800.00},
+                {seat: "Vip", price: 1200.00},
             ],
             reviews: [
                 { user: userService.getUserById(1).name, review: "A gripping, stylish love triangle set in the high-stakes world of tennis." },
@@ -277,7 +277,7 @@ export class ShopService implements OnInit{
         {
             id: 7,
             name: "Frozen",
-           type: "Animated musical fantasy",
+           type: "Animated",
             desc: "Frozen tells the story of two sisters, Elsa and Anna, in the kingdom of Arendelle. When Elsa accidentally unleashes her magical ice powers, Anna embarks on a perilous journey to find her, facing dangers and discovering the true meaning of love and sisterhood.",
             imageSrc: "assets/movieImages/frozen.jpg", 
             actors: ["Idina Menzel", "Kristen Bell ", "Josh Gad"],
@@ -287,8 +287,8 @@ export class ShopService implements OnInit{
             releaseDate: new Date("2013-11-27"),
             projDate: [new Date("2025-04-03"), new Date("2025-04-11")],
             prices: [
-                {seat: "regular", price: 800.00},
-                {seat: "vip", price: 1200.00},
+                {seat: "Regular", price: 800.00},
+                {seat: "Vip", price: 1200.00},
             ],
             reviews: [
                 { user: userService.getUserById(1).name, review: "A magical, heartwarming tale with unforgettable music." },
@@ -304,7 +304,7 @@ export class ShopService implements OnInit{
         {
             id: 8,
             name: "The Hunger Games",
-            type: "Dystopian science fiction action",
+            type: "Action",
             desc: "The Hunger Games follows Katniss Everdeen, a young woman who volunteers to take her sister's place in a brutal televised competition where 24 tributes must fight to the death. As she navigates the deadly arena, Katniss becomes a symbol of resistance against the oppressive Capitol, sparking a revolution.",
             imageSrc: "assets/movieImages/hgames.jpg", 
             actors: ["Jennifer Lawrence", "Josh Hutcherson", "Liam Hemsworth"],
@@ -314,8 +314,8 @@ export class ShopService implements OnInit{
             releaseDate: new Date("2012-03-23"),
             projDate: [new Date("2025-06-19"), new Date("2025-06-22")],
             prices: [
-                {seat: "regular", price: 800.00},
-                {seat: "vip", price: 1200.00},
+                {seat: "Regular", price: 800.00},
+                {seat: "Vip", price: 1200.00},
             ],
             reviews: [
                 { user: userService.getUserById(1).name, review: "A thrilling, intense adaptation with a powerful lead performance by Jennifer Lawrence." },
@@ -331,9 +331,9 @@ export class ShopService implements OnInit{
         {
             id: 9,
             name: "How to Lose a Guy in 10 Days",
-            type: "Romantic comedy",
+            type: "Comedy",
             desc: "How to Lose a Guy in 10 Days follows Andie, a magazine writer who tries to push a man away in 10 days for an article, while Ben, a charming ad executive, aims to make her fall in love with him as part of a bet. As their conflicting goals create humorous chaos, they begin to develop real feelings for each other, leading to a heartwarming and comedic conclusion.",
-            imageSrc: "assets/ovieImages/how2loose.jpg", 
+            imageSrc: "assets/movieImages/how2loose.jpg", 
             actors: ["Kate Hudson", "Matthew McConaughey", "Kathryn Hahn"],
             duration: "1h 56m",
             director: "Donald Petrie",
@@ -341,8 +341,8 @@ export class ShopService implements OnInit{
             releaseDate: new Date("2003-02-07"),
             projDate: [new Date("2025-06-05"), new Date("2025-06-07")],
             prices: [
-                {seat: "regular", price: 800.00},
-                {seat: "vip", price: 1200.00},
+                {seat: "Regular", price: 800.00},
+                {seat: "Vip", price: 1200.00},
             ],
             reviews: [
                 { user: userService.getUserById(1).name, review: "A fun, lighthearted rom-com with great chemistry between the leads." },
@@ -358,7 +358,7 @@ export class ShopService implements OnInit{
         {
             id: 10,
             name: "La La Land",
-           type: "Romantic musical drama",
+           type: "Thriller",
             desc: "La La Land tells the story of Mia, an aspiring actress, and Sebastian, a passionate jazz musician, who fall in love while chasing their dreams in Los Angeles. As they navigate their evolving careers and relationship, they must make difficult choices that ultimately test their love and aspirations.",
             imageSrc: "assets/movieImages/lalaland.jpg", 
             actors: ["Ryan Gosling", "Emma Stone", "John Legend "],
@@ -368,8 +368,8 @@ export class ShopService implements OnInit{
             releaseDate: new Date("2016-12-09"),
             projDate: [new Date("2025-04-17"), new Date("2025-05-01")],
             prices: [
-                {seat: "regular", price: 800.00},
-                {seat: "vip", price: 1200.00},
+                {seat: "Regular", price: 800.00},
+                {seat: "Vip", price: 1200.00},
             ],
             reviews: [
                 { user: userService.getUserById(1).name, review: "A visually stunning, emotionally captivating musical about dreams and love." },
@@ -386,7 +386,7 @@ export class ShopService implements OnInit{
         {
             id: 11,
             name: "Me Before You",
-            type: "Romantic drama",
+            type: "Romance",
             desc: "Me Before You tells the story of Louisa Clark, a young woman who becomes a caregiver for Will Traynor, a man left paralyzed after an accident. As their bond deepens, Louisa struggles to change Will’s decision to end his life, leading to a powerful exploration of love, sacrifice, and personal choice.",
             imageSrc: "assets/movieImages/mebeforeyou.jpg", 
             actors: ["Emilia Clarke", "Sam Claflin", "Charles Dance"],
@@ -396,8 +396,8 @@ export class ShopService implements OnInit{
             releaseDate: new Date("2016-06-03"),
             projDate: [new Date("2025-04-17"), new Date("2025-04-26")],
             prices: [
-                {seat: "regular", price: 800.00},
-                {seat: "vip", price: 1200.00},
+                {seat: "Regular", price: 800.00},
+                {seat: "Vip", price: 1200.00},
             ],
             reviews: [
                 { user: userService.getUserById(1).name, review: "A deeply emotional love story that tugs at the heartstrings." },
@@ -414,7 +414,7 @@ export class ShopService implements OnInit{
         {
             id: 12,
             name: "Oppenheimer",
-             type: "Historical drama and biographical film",
+             type: "Drama",
             desc: "Oppenheimer follows the life of J. Robert Oppenheimer, the physicist who spearheaded the development of the atomic bomb during World War II as part of the Manhattan Project. The film explores the profound moral and ethical dilemmas he faced, as well as the personal and global consequences of creating such a destructive weapon.",
             imageSrc: "assets/movieImages/oppenheimer.jpg", 
             actors: ["Cillian Murphy ", "Emily Blunt ", "Matt Damon"],
@@ -424,8 +424,8 @@ export class ShopService implements OnInit{
             releaseDate: new Date("2022-07-21"),
             projDate: [new Date("2025-05-19"), new Date("2025-05-24")],
             prices: [
-                {seat: "regular", price: 800.00},
-                {seat: "vip", price: 1200.00},
+                {seat: "Regular", price: 800.00},
+                {seat: "Vip", price: 1200.00},
             ],
             reviews: [
                 { user: userService.getUserById(1).name, review: "A gripping, intense portrayal of a brilliant mind and its consequences." },
@@ -442,7 +442,7 @@ export class ShopService implements OnInit{
         {
             id: 13,
             name: "Playing It Cool",
-           type: "Romantic comedy",
+           type: "Romance",
             desc: "Playing It Cool follows a screenwriter who is determined to avoid falling in love, but everything changes when he meets a woman who challenges his views on relationships. As he tries to stay emotionally detached, he finds himself increasingly drawn to her, leading to comedic and heartfelt moments.",
             imageSrc: "assets/movieImages/playingitcool.jpg", 
             actors: ["Chris Evans", "Michelle Monaghan", "Topher Grace"],
@@ -452,8 +452,8 @@ export class ShopService implements OnInit{
             releaseDate: new Date("2015-03-06"),
             projDate: [new Date("2025-05-26"), new Date("2025-06-02")],
             prices: [
-                {seat: "regular", price: 800.00},
-                {seat: "vip", price: 1200.00},
+                {seat: "Regular", price: 800.00},
+                {seat: "Vip", price: 1200.00},
             ],
             reviews: [
                 { user: userService.getUserById(1).name, review: "A charming, lighthearted romantic comedy with great chemistry between the leads." },
@@ -470,7 +470,7 @@ export class ShopService implements OnInit{
         {
             id: 14,
             name: "Titanic",
-            type: " Romantic drama and disaster film",
+            type: "Drama",
             desc: "Titanic follows the love story between Jack, a poor artist, and Rose, a wealthy young woman, who meet aboard the doomed RMS Titanic. As the ship tragically sinks, their love is challenged by the disaster, social differences, and survival, culminating in an emotional and iconic ending.",
             imageSrc: "assets/movieImages/titanic.jpg", 
             actors: ["Leonardo DiCaprio", "Kate Winslet", "Billy Zane"],
@@ -480,8 +480,8 @@ export class ShopService implements OnInit{
             releaseDate: new Date("1997-12-19"),
             projDate: [new Date("2025-04-03"), new Date("2025-04-17")],
             prices: [
-                {seat: "regular", price: 800.00},
-                {seat: "vip", price: 1200.00},
+                {seat: "Regular", price: 800.00},
+                {seat: "Vip", price: 1200.00},
             ],
             reviews: [
                 { user: userService.getUserById(1).name, review: "A timeless, epic romance set against a legendary tragedy.!" },

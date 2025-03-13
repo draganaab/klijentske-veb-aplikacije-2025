@@ -33,7 +33,6 @@ export class SignupComponent {
     const phoneNumPattern = /^([0-9]{3}\s?[0-9]{6,7}){1}$/;
     const addressPattern = /^[A-z,a-z,\s,0-9]{2,40}$/;
 
-    // Validation checks
     if (!namePattern.test(name)) {
       this.setError("errorNameText", "Invalid name format! (First Last)");
     }
@@ -53,20 +52,16 @@ export class SignupComponent {
       this.setError("errorAcceptanceText", "You must accept the terms and conditions.");
     }
 
-    // If any error exists, stop execution
     if (this.errorExists) return;
 
-    // Check if email is already registered
     if (this.userService.getUser(email)) {
       this.setError("errorText", "User with this email already exists.");
       return;
     }
 
-    // Register new user
     this.userService.registerUser(name, email, password, phoneNum, address);
     console.log("New user registered:", { name, email });
 
-    // Redirect to login page
     this.router.navigate(['/login']);
   }
 
