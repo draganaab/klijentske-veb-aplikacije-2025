@@ -53,7 +53,7 @@ export class ItemListComponent implements OnInit{
   }
 
   items = ShopService.FinalItemList;
-  selectedSizePrice: Array<any>= [null, null];
+  selectedSeatPrice: Array<any>= [null, null];
 
   getRating(item: Item): number{
     var sum: number;
@@ -69,7 +69,7 @@ export class ItemListComponent implements OnInit{
     return value.toFixed(2);
   }
 
-  updateSelectedSizePrice(event: MouseEvent, item: Item, seat: string): void {
+  updateSelectedSeatPrice(event: MouseEvent, item: Item, seat: string): void {
     this.checkSeat = [seat, item];
     const clickedElement = event.target as HTMLElement;
     const parentCardContent = clickedElement.closest('mat-card-content');
@@ -77,8 +77,8 @@ export class ItemListComponent implements OnInit{
     if (parentCardContent) {
       const attrId = parentCardContent.getAttribute('id');
       const selectedPrice = item.prices.find(price => price.seat === seat)!;
-      this.selectedSizePrice[0] = selectedPrice.price;
-      this.selectedSizePrice[1] = attrId;
+      this.selectedSeatPrice[0] = selectedPrice.price;
+      this.selectedSeatPrice[1] = attrId;
     }
   }
 
