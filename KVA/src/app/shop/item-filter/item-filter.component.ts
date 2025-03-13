@@ -18,8 +18,7 @@ export class ItemFilterComponent {
   priceList: Array<number> = ShopService.priceList;
   typeList: Array<string> = ShopService.typeList;
 
-  sizeList: Array<string> = ShopService.sizeList;
-  brandList: Array<string> = ShopService.brandList;
+  
 
   items = ShopService.itemList;
   filteredItems!: Array<Item>;

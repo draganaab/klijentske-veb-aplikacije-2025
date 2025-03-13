@@ -47,8 +47,7 @@ export class ShopService implements OnInit{
     static priceList: Array<number> = [800, 1200];
     static typeList: Array<string> = ["Drama", "Romance", "Action", "Comedy", "Thriller", "Animated"];
 
-    static brandList: Array<string> = ["Nike", "Adidas", "Zara", "Puma", "Louis Vuitton"];
-    static sizeList: Array<string> = ["XS", "S", "M", "L", "XL", "XXL", "XXXL"];
+    
 
     static itemList: Array<Item>;
     static FinalItemList: Array<Item>;
