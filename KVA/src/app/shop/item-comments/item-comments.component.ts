@@ -3,6 +3,7 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ItemListComponent } from '../item-list/item-list.component';
 import { Item } from '../shop.service';
 
+//Inicijalizacija komentara (da li postoje ili ne)s
 @Component({
   selector: 'app-item-comments',
   templateUrl: './item-comments.component.html',

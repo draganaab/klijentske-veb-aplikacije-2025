@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class SignupComponent {
   
+// promenjive za greske (da li greska postoji)  
   errorExists = false;
   errorText = "";
   errorNameText = "";

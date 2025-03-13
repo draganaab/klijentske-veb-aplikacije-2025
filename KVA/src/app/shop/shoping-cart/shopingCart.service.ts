@@ -29,7 +29,7 @@ export class ShopCartService implements OnInit{
         this.ItemWatchedList.emit(ShopCartService.itemWatchedList);
         console.log("itemWatched list u shoping servisu "+ShopCartService.itemWatchedList);
     }
-
+    
     ngOnInit(): void {
         console.log("itemWatched list u shoping servisu "+ShopCartService.itemWatchedList);
     }
@@ -44,7 +44,6 @@ export class ShopCartService implements OnInit{
         ShopCartService.itemWatchedList.push(item);
         this.ItemWatchedList.emit(ShopCartService.itemWatchedList);
         this.cartListUpdated.emit(ShopCartService.cartList);
-        // console.log("lista glupa: " + this.itemWatchedList);
         setTimeout(() => {
             const index = ShopCartService.cartList.findIndex(c => c.id === cart.id && cart.state=="reserved");
             if (index !== -1) {
@@ -65,8 +64,6 @@ export class ShopCartService implements OnInit{
     emitItemList(){
         this.ItemListUpdated.emit(ShopService.itemList);
     }
-
-
 
     static itemWatchedList: Array<timeWatched> =[]
     states: Array<string> = ["watched", "reserved", "canceled", "temp"];
@@ -109,8 +106,6 @@ export class ShopCartService implements OnInit{
         var test: string | null = localStorage.getItem(`${name}`)!;
         console.log(JSON.parse(test));
     }
-
-
 
     findPrice(item: Item, seat: string): number {
         let price!: number;

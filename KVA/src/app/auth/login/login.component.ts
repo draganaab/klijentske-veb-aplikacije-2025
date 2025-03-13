@@ -32,7 +32,7 @@ export class LoginComponent {
       return;
     }
 
-    // Successful login
+    // Uspesno logovanje
     this.errorExists = false;
     this.userService.currentUser = user;
     console.log("Logged in user:", this.userService.currentUser);

@@ -15,6 +15,7 @@ export class UserService {
 
     currentUser!: User;
 
+//lista ljudi koji su se vec sing-up    
     static userList: Array<User> = [
         {
             id: 0,
@@ -122,6 +123,7 @@ export class UserService {
         )) != undefined;
     }
 
+//Registracija User-a
     registerUser(name: string, email: string, password: string, phoneNum: string, date: Date, address: string = ""): User{
         var maxId: number = 0;
         UserService.userList.forEach(user => {
@@ -129,7 +131,7 @@ export class UserService {
                 maxId = user.id;
             }
         });
-
+        
         var id =++maxId;
         if(address == ""){
             var user: User = {id, name, email, password, phoneNum, date};

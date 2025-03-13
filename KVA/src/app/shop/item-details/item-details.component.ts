@@ -3,7 +3,7 @@ import { ItemListComponent } from '../item-list/item-list.component';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Item } from '../shop.service';
 
-
+//Pokupi item(film) 
 @Component({
   selector: 'app-item-details',
   templateUrl: './item-details.component.html',

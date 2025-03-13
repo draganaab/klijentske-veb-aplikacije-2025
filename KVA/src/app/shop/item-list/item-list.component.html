@@ -1,5 +1,8 @@
+<!--Prikaz zeljenog broja filmova-->
 <mat-paginator [length]="items.length" [pageSize]="pageSize" [pageSizeOptions]="[5, 10, 25, 100]" (page)="pageEvent = $event; getPagedItems()">
 </mat-paginator>
+
+<!--Struktura svakog filma pojedinacno-->
 <div class="cards" fxLayout="row wrap" fxLayoutAlign="center start" fxLayoutGap="2rem">
     <mat-card fxLayout="column" fxLayoutAlign="center center" *ngFor="let item of pagedItems">
         <mat-card-content [attr.id]="'item-content-' + item.id" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px">

@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { Cart, timeWatched, ShopCartService } from '../shopingCart.service';
+import { Cart, ShopCartService } from '../shopingCart.service';
 import { ShopService } from '../../shop.service';
 import { Subscription } from 'rxjs';
 import { User, UserService } from '../../../auth/user.service';
@@ -18,30 +18,18 @@ export class ShippingCartComponent implements OnInit{
   }
 
   user: User = this.userService.currentUser!;
-  itemWatchedList: Array<timeWatched>=[];
   orders: Array<Cart>= [];
-  progress: Array<{id: number, progress: number}> =[];
 
+  //Filmovi koji su rezervisani/njihova cena itd
   ngOnInit(): void {
     this.orders = ShopCartService.cartList.filter(order => order.state === 'reserved' && order.user.email === this.user.email);
-    this.shopCartService.ItemWatchedList.subscribe(itemWatchedList => {
-      this.itemWatchedList = itemWatchedList.filter(order => 
-        order.order.state === 'sending' && order.order.user.email === this.user.email
-      );
-    });
-    console.log("lista glupa: ");
-    console.log(this.itemWatchedList);
 
     this.shopCartService.cartListUpdated.subscribe(cartList => {
       this.orders = cartList.filter(order => order.state === 'reserved' && order.user.email === this.user.email);
-      cartList.forEach(order => { if(order.state === 'reserved' && order.user.email === this.user.email){
-        this.progress.push({id: order.id, progress: 0});
-
-      }})
     });
 
   }
-
+  
   formatToTwoDecimal(value: number): string {
     return value.toFixed(2);
   }
@@ -54,7 +42,7 @@ export class ShippingCartComponent implements OnInit{
     return fullPrice;
   }
 
-
+// Otkazi/canceled rezervisan film
   cancel(cart: Cart): void {
     const index = ShopCartService.cartList.findIndex(c => c.id === cart.id && cart.state == "reserved");
     if (index !== -1) {

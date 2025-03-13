@@ -18,10 +18,7 @@ export class CurrentCartComponent implements OnInit {
   ngOnInit(): void {
     this.cart = JSON.parse(localStorage.getItem(this.userService.currentUser.email)!);
   }
-
-
-
-
+// Izbrisi 1 item
   removeOneItem(item: CartItem, i: number): void {
     if (item.quantity == 1) {
       this.cart.list.splice(i, 1);
@@ -31,7 +28,7 @@ export class CurrentCartComponent implements OnInit {
     localStorage.removeItem(`${this.user.email}`);
     localStorage.setItem(`${this.user.email}`, JSON.stringify(this.cart));
   }
-
+// Izbrisi sve iteme
   removeAllItem(item: CartItem, i: number): void {
     this.cart.list.splice(i, 1);
     localStorage.removeItem(`${this.user.email}`);
@@ -50,10 +47,8 @@ export class CurrentCartComponent implements OnInit {
     return fullPrice;
   }
 
-
+// Dugme za order
   OrderCart(): void {
-    console.log("lista korpi pre:");
-    console.log(ShopCartService.cartList);
     let cart: Cart = JSON.parse(localStorage.getItem(this.userService.currentUser.email)!);
     cart.state = "reserved";
 
@@ -68,7 +63,7 @@ export class CurrentCartComponent implements OnInit {
     var id = ++maxId;
     cart.id = id;
     var time = new Date();
-    time.setSeconds(time.getSeconds() + 5);
+    time.setSeconds(time.getSeconds() + 5); //prebaci u watched
 
     this.shopCartService.addToCartList(cart, time);
     localStorage.removeItem(`${this.user.email}`);

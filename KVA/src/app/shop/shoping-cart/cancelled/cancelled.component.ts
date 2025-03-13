@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Cart, timeWatched, ShopCartService } from '../shopingCart.service';
+import { Cart, ShopCartService } from '../shopingCart.service';
 import { ShopService } from '../../shop.service';
 import { User, UserService } from '../../../auth/user.service';
 
@@ -15,17 +15,12 @@ export class CancelledComponent {
   }
 
   user: User = this.userService.currentUser!;
-  timeWatchedList: Array<timeWatched>=[];
   orders: Array<Cart>= [];
-  progress: Array<{id: number, progress: number}> =[];
 
+//Filmovi koji su canceled/njihova cena
   ngOnInit(): void {
     this.shopCartService.cartListUpdated.subscribe(cartList => {
       this.orders = cartList.filter(order => order.state === 'canceled' && order.user.email === this.user.email);
-      cartList.forEach(order => { if(order.state === 'canceled' && order.user.email === this.user.email){
-        this.progress.push({id: order.id, progress: 0});
-
-      }})
     });
 
     this.orders = ShopCartService.cartList.filter(order => order.state === 'canceled' && order.user.email === this.user.email);

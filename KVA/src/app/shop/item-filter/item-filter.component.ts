@@ -9,16 +9,17 @@ import { NgForm } from '@angular/forms';
   styleUrl: './item-filter.component.css'
 })
 
+//Konstruktor 
 @Injectable()
 export class ItemFilterComponent {
   constructor(private userService: UserService, private shopService: ShopService) {
     this.items = ShopService.itemList;
   }
 
+//Lista cena i zanrova koji su predefinisani  
   priceList: Array<number> = ShopService.priceList;
   typeList: Array<string> = ShopService.typeList;
 
-  
 
   items = ShopService.itemList;
   filteredItems!: Array<Item>;
@@ -124,7 +125,7 @@ export class ItemFilterComponent {
 
     console.log(counter);
 
-
+//Smesti sve itemse i prikazi ih 
     if(counter==7){
       this.filteredItems = this.items
     }

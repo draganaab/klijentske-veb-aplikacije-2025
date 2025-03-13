@@ -20,6 +20,7 @@ export class ProfileComponent {
   errorAddressText = "";
   errorAcceptanceText = "";
 
+//konstruktor koji se poziva prilikom otvarannja profil prozora
   constructor(@Inject(MAT_DIALOG_DATA) public data: any, public userService: UserService) { }
 
   ngOnInit(): void {

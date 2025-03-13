@@ -25,10 +25,6 @@
                     </mat-card-content>
                 </mat-card>
                 <h3>Total price: {{ formatToTwoDecimal(fullPriceCart(order)) }} rsd</h3>
-                <!-- <div fxLayout="column" fxLayoutAlign="center center">
-                    <h3>Arrival time progress</h3>
-                    <mat-progress-bar #progressBar [id]="'progressBar' + order.id" mode="determinate" [value]="0" color="accent"></mat-progress-bar>
-                </div> -->
             </mat-card-content>
             <mat-card-actions fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="1rem">
                 <button (click)="cancel(order)" mat-raised-button color="warn">Cancel reservations</button>

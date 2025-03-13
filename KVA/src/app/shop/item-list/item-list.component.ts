@@ -18,18 +18,16 @@ import { ItemDetailsComponent } from '../item-details/item-details.component';
 export class ItemListComponent implements OnInit{
   constructor(private userService: UserService, private shopService: ShopService,private shopCartService: ShopCartService, public dialog: MatDialog) {
     this.items = ShopService.FinalItemList;
-    console.log("listaaa");
-    console.log(this.items);
 
     ShopService.itemListUpdated.subscribe(() => {
       this.items = ShopService.FinalItemList;
-      this.getPagedItems(); // Refresh the paged items
+      this.getPagedItems(); // Refresh odabran broj filmova
     });
   }
   
   checkSeat: any = [];
-  pagedItems: Item[] = []; // Items to display on the current page
-  pageSize = 5; // Default page size
+  pagedItems: Item[] = []; // Stavke za prikaz na trenutnoj stranici
+  pageSize = 5; // Osnovna strana prikaza filmova
   pageEvent!: PageEvent;
 
   ngOnInit(): void {
@@ -38,6 +36,7 @@ export class ItemListComponent implements OnInit{
     this.getPagedItems();
   }
 
+  //Slanje item-a u korpu
   PassCartData(item: Item) {
     if (this.userService.currentUser != undefined || this.userService.currentUser != null) {
       if (this.checkSeat.length != 0) {
@@ -55,6 +54,7 @@ export class ItemListComponent implements OnInit{
   items = ShopService.FinalItemList;
   selectedSeatPrice: Array<any>= [null, null];
 
+ //Prikaz rating-a (zvezdica) svakog korisnika 
   getRating(item: Item): number{
     var sum: number;
     sum=0.00;
@@ -65,10 +65,12 @@ export class ItemListComponent implements OnInit{
     return sum / item.ratings.length;
   }
 
+//Cena na dve decimale
   formatToTwoDecimal(value: number): string {
     return value.toFixed(2);
   }
 
+//Cena za odredjenu kart (regular/vip)  
   updateSelectedSeatPrice(event: MouseEvent, item: Item, seat: string): void {
     this.checkSeat = [seat, item];
     const clickedElement = event.target as HTMLElement;
@@ -82,6 +84,7 @@ export class ItemListComponent implements OnInit{
     }
   }
 
+//Prikaz selektovanog broja item-a  
   getPagedItems(): void {
     const startIndex = this.pageEvent ? this.pageEvent.pageIndex * this.pageEvent.pageSize : 0;
     const endIndex = this.pageEvent ? startIndex + this.pageEvent.pageSize : this.pageSize;

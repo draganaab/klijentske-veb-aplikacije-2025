@@ -4,7 +4,7 @@
             close
         </mat-icon>
     </button>
-
+<!--Dugme za edit-->
     <button mat-icon-button (click)="enableEdit()">
         <mat-icon matListIcon *ngIf="this.profileForInput.id == this.userService.currentUser.id"
         (click)="this.isEditing = !this.isEditing">
@@ -12,7 +12,7 @@
         </mat-icon>
     </button>
 </div>
-
+<!--Lista editovanja koju pruza olovka-->
 <mat-dialog-content>
     <form fxLayout="column" fxLayoutGap="1rem" #editForm="ngForm" (ngSubmit)="finishEditing(editForm)">
         <mat-card>
@@ -28,7 +28,7 @@
                 </div>
             </div>
         </mat-card>
-
+<!--edit broja telefona-->
         <mat-card>
             <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="1rem">
                 <mat-icon>call</mat-icon>
@@ -42,7 +42,7 @@
                 </div>
             </div>
         </mat-card>
-
+<!--stari password-->
         <mat-card *ngIf="this.isEditing">
             <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="1rem">
                 <mat-icon>lock</mat-icon>
@@ -55,7 +55,7 @@
                 </div>
             </div>
         </mat-card>
-
+<!--novi password-->
         <mat-card *ngIf="this.isEditing">
             <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="1rem">
                 <mat-icon>lock</mat-icon>
@@ -68,7 +68,7 @@
                 </div>
             </div>
         </mat-card>
-
+<!--adresa-->
         <mat-card>
             <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="1rem">
                 <mat-icon>location_on</mat-icon>
