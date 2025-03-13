@@ -1,12 +1,12 @@
 import {
-  BidiModule
-} from "./chunk-UWZ6643K.js";
-import {
   coerceArray,
   coerceBooleanProperty,
   coerceElement,
   coerceNumberProperty
 } from "./chunk-4QMVJ4PA.js";
+import {
+  BidiModule
+} from "./chunk-UWZ6643K.js";
 import {
   DOCUMENT,
   isPlatformBrowser
@@ -5066,4 +5066,4 @@ export {
   MatRippleLoader,
   _MatInternalFormField
 };
-//# sourceMappingURL=chunk-2YDTTKBT.js.map
+//# sourceMappingURL=chunk-ABTXAJ4W.js.map
