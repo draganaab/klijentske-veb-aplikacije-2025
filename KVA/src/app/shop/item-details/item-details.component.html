@@ -1,0 +1,41 @@
+<div>
+    <button mat-icon-button [mat-dialog-close]="true">
+        <mat-icon matListIcon>close</mat-icon>
+    </button>
+</div>
+
+<mat-dialog-content>
+    <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="1rem">
+        
+        <mat-card>
+            <mat-card-content>
+                <h3>Type:</h3>
+                <p>{{ item.type }}</p>
+            </mat-card-content>
+        </mat-card>
+
+        <mat-card>
+            <mat-card-content>
+                <h3>Director:</h3>
+                <p>{{ item.director }}</p>
+            </mat-card-content>
+        </mat-card>
+
+        <mat-card>
+            <mat-card-content>
+                <h3>Projection Dates:</h3>
+                <div fxLayout="column">
+                    <p *ngFor="let time of item?.projDate">{{ time }}</p>
+                </div>
+            </mat-card-content>
+        </mat-card>
+
+        <mat-card>
+            <mat-card-content>
+                <h3>Description:</h3>
+                <p>{{ item.desc }}</p>
+            </mat-card-content>
+        </mat-card>
+
+    </div>
+</mat-dialog-content>

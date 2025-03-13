@@ -17,6 +17,7 @@
         </div>
         </mat-card-content>
         <mat-card-actions fxLayout="row" fxLayoutAlign="space-between">
+            <button mat-button (click)="openDetails(item)"> <mat-icon class ="icon">document_scanner</mat-icon></button>
             <button mat-button (click)="openComments(item)"><mat-icon class="icon">more_vert</mat-icon></button>
             <button (click)="PassCartData(item)" mat-button><mat-icon class="icon">add_shopping_cart</mat-icon></button>
         </mat-card-actions>

@@ -7,6 +7,7 @@ import { PageEvent } from '@angular/material/paginator';
 import { MatDialog } from '@angular/material/dialog';
 import { ItemCommentsComponent } from '../item-comments/item-comments.component';
 import { ShopCartService } from '../shoping-cart/shopingCart.service';
+import { ItemDetailsComponent } from '../item-details/item-details.component';
 
 
 @Component({
@@ -93,5 +94,13 @@ export class ItemListComponent implements OnInit{
       width: '50vw',
       data: {item: item}
     });
+  }
+
+  openDetails(item: Item){
+    const profileDialog = this.dialog.open(ItemDetailsComponent, {
+      disableClose: true,
+      width: '50vw',
+      data: {item: item}
+    })
   }
 }

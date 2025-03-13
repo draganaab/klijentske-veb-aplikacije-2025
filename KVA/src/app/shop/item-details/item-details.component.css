@@ -1,0 +1,12 @@
+mat-dialog-content>div>div{
+    width: 100%;
+}
+
+mat-card{
+    width: 100%;
+    background-color: rgb(58, 57, 57);
+}
+
+mat-card-header{
+    color:rgb(64, 134, 224);
+}

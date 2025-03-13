@@ -31,7 +31,7 @@ export interface Item {
     seats: Array<string>;
     director: string;
     releaseDate: Date;
-    projDate: Array<Date>;
+    projDate: Array<string>;
     prices: Array<Prices>;
     reviews: Array<Review>;
     ratings: Array<Rating>;
@@ -93,7 +93,7 @@ export class ShopService implements OnInit{
                 seats: ["Regular", "Vip"],
                 director: "Justin Baldoni",
                 releaseDate: new Date("2024-04-18"),
-                projDate: [new Date("2025-05-20"), new Date("2025-05-21")],
+                projDate: ["13:00", "19:00"],
                 prices: [
                     {seat: "Regular", price: 800.00},
                     {seat: "Vip", price: 1200.00},
@@ -121,7 +121,7 @@ export class ShopService implements OnInit{
                 seats: ["Regular", "Vip"],
                 director: "Gil Junger",
                 releaseDate: new Date("1999-03-31"),
-                projDate: [new Date("2025-05-23"), new Date("2025-05-25")],
+                projDate: ["10:00", "21:00"],
                 prices: [
                     {seat: "Regular", price: 800.00},
                     {seat: "Vip", price: 1200.00},
@@ -148,7 +148,7 @@ export class ShopService implements OnInit{
             seats: ["Regular", "Vip"],
             director: "Sarah Polley",
             releaseDate: new Date("2007-05-04"),
-            projDate: [new Date("2025-05-22"), new Date("2025-05-23")],
+            projDate: ["09:00", "00:00"],
             prices: [
                 {seat: "Regular", price: 800.00},
                 {seat: "Vip", price: 1200.00},
@@ -176,7 +176,7 @@ export class ShopService implements OnInit{
             seats: ["Regular", "Vip"],
             director: "Greta Gerwig",
             releaseDate: new Date("2023-07-21"),
-            projDate: [new Date("2025-04-25"), new Date("2025-05-26")],
+            projDate: ["15:00"],
             prices: [
                 {seat: "Regular", price: 800.00},
                 {seat: "Vip", price: 1200.00},
@@ -203,7 +203,7 @@ export class ShopService implements OnInit{
             seats: ["Regular", "Vip"],
             director: "Chris Evans",
             releaseDate: new Date("2015-09-04"),
-            projDate: [new Date("2025-06-23"), new Date("2025-07-24")],
+            projDate: ["16:00"],
             prices: [
                 {seat: "Regular", price: 800.00},
                 {seat: "Vip", price: 1200.00},
@@ -230,7 +230,7 @@ export class ShopService implements OnInit{
             seats: ["Regular", "Vip"],
             director: "Larry Charles",
             releaseDate: new Date("2006-11-03"),
-            projDate: [new Date("2025-04-24"), new Date("2025-04-25")],
+            projDate: ["11:00", "20:00"],
             prices: [
                 {seat: "Regular", price: 800.00},
                 {seat: "Vip", price: 1200.00},
@@ -257,7 +257,7 @@ export class ShopService implements OnInit{
             seats: ["Regular", "Vip"],
             director: "Luca Guadagnino",
             releaseDate: new Date("2023-09-15"),
-            projDate: [new Date("2025-04-19"), new Date("2025-04-25")],
+            projDate: ["01:00"],
             prices: [
                 {seat: "Regular", price: 800.00},
                 {seat: "Vip", price: 1200.00},
@@ -284,7 +284,7 @@ export class ShopService implements OnInit{
             director: "Chris Buck",
             seats: ["Regular", "Vip"],
             releaseDate: new Date("2013-11-27"),
-            projDate: [new Date("2025-04-03"), new Date("2025-04-11")],
+            projDate: ["03:00", "05:00"],
             prices: [
                 {seat: "Regular", price: 800.00},
                 {seat: "Vip", price: 1200.00},
@@ -311,7 +311,7 @@ export class ShopService implements OnInit{
             seats: ["Regular", "Vip"],
             director: "Gary Ross",
             releaseDate: new Date("2012-03-23"),
-            projDate: [new Date("2025-06-19"), new Date("2025-06-22")],
+            projDate: ["17:00"],
             prices: [
                 {seat: "Regular", price: 800.00},
                 {seat: "Vip", price: 1200.00},
@@ -338,7 +338,7 @@ export class ShopService implements OnInit{
             director: "Donald Petrie",
             seats: ["Regular", "Vip"],
             releaseDate: new Date("2003-02-07"),
-            projDate: [new Date("2025-06-05"), new Date("2025-06-07")],
+            projDate: ["23:00"],
             prices: [
                 {seat: "Regular", price: 800.00},
                 {seat: "Vip", price: 1200.00},
@@ -365,7 +365,7 @@ export class ShopService implements OnInit{
             director: "Damien Chazelle",
             seats: ["Regular", "Vip"],
             releaseDate: new Date("2016-12-09"),
-            projDate: [new Date("2025-04-17"), new Date("2025-05-01")],
+            projDate: ["12:00"],
             prices: [
                 {seat: "Regular", price: 800.00},
                 {seat: "Vip", price: 1200.00},
@@ -393,7 +393,7 @@ export class ShopService implements OnInit{
             seats: ["Regular", "Vip"],
             director: "Thea Sharrock",
             releaseDate: new Date("2016-06-03"),
-            projDate: [new Date("2025-04-17"), new Date("2025-04-26")],
+            projDate: ["14:00", "02:00"],
             prices: [
                 {seat: "Regular", price: 800.00},
                 {seat: "Vip", price: 1200.00},
@@ -421,7 +421,7 @@ export class ShopService implements OnInit{
             seats: ["Regular", "Vip"],
             director: "Christopher Nolan",
             releaseDate: new Date("2022-07-21"),
-            projDate: [new Date("2025-05-19"), new Date("2025-05-24")],
+            projDate: ["22:00"],
             prices: [
                 {seat: "Regular", price: 800.00},
                 {seat: "Vip", price: 1200.00},
@@ -449,7 +449,7 @@ export class ShopService implements OnInit{
             seats: ["Regular", "Vip"],
             director: "Justin Reardon",
             releaseDate: new Date("2015-03-06"),
-            projDate: [new Date("2025-05-26"), new Date("2025-06-02")],
+            projDate: ["07:00"],
             prices: [
                 {seat: "Regular", price: 800.00},
                 {seat: "Vip", price: 1200.00},
@@ -477,7 +477,7 @@ export class ShopService implements OnInit{
             seats: ["Regular", "Vip"],
             director: "James Cameron",
             releaseDate: new Date("1997-12-19"),
-            projDate: [new Date("2025-04-03"), new Date("2025-04-17")],
+            projDate: ["04:00", "18:00"],
             prices: [
                 {seat: "Regular", price: 800.00},
                 {seat: "Vip", price: 1200.00},

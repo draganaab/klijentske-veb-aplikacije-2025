@@ -25,6 +25,7 @@ import { ShippingCartComponent } from './shop/shoping-cart/reserved-cart/reserve
 import { CancelledComponent } from './shop/shoping-cart/cancelled/cancelled.component';
 import { ArivedCartComponent } from './shop/shoping-cart/watched-cart/watched-cart.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ItemDetailsComponent } from './shop/item-details/item-details.component';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ShopComponent,
     ItemListComponent,
     ItemFilterComponent,
+    ItemDetailsComponent,
     ShopingCartComponent,
     ItemCommentsComponent,
     CurrentCartComponent,
