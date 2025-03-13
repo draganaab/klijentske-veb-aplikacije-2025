@@ -31,17 +31,7 @@ export class ItemFilterComponent {
   onSubmit(form: NgForm){
     this.filteredItems = [];
     var counter = 0;
-    console.log(form.value.name);
-    console.log(form.value.minPrice);
-    console.log(form.value.maxPrice);
-    console.log(form.value.minRating);
-    console.log(form.value.maxRating);
-    console.log(form.value.fromDate);
-    console.log(form.value.toDate);
-    console.log(form.value.type);
-    console.log(form.value.size);
-    console.log(form.value.brand);
-    console.log("-----------------------------------------");
+
 
     if(form.value.name==""){
       counter++;

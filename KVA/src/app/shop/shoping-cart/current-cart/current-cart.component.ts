@@ -20,14 +20,7 @@ export class CurrentCartComponent implements OnInit {
   }
 
 
-  // findPrice(item: CartItem): number{
-  //   return this.shopCartService.findPrice(item);
-  // }
-  // findPrice(item: CartItem): number{
-  //   let price!: number;
-  //   item.item.prices.forEach(obj => {if(obj.size == item.size){ price = obj.price}});
-  //   return price*item.quantity;
-  // }
+
 
   removeOneItem(item: CartItem, i: number): void {
     if (item.quantity == 1) {
@@ -56,26 +49,13 @@ export class CurrentCartComponent implements OnInit {
     });
     return fullPrice;
   }
-  // fullPriceCart(cart: Cart): number{
-  //   return this.shopCartService.fullPriceCart(cart);
-  // }
-  // fullPriceCart(): number{
-  //   var fullPrice: number = 0;
-  //   this.cart.list.forEach(item => {
-  //     const price = this.findPrice(item);
 
-  //     if (price) {
-  //       fullPrice += (price * item.quantity);
-  //     }
-  //   });
-  //   return fullPrice;
-  // }
 
   OrderCart(): void {
     console.log("lista korpi pre:");
     console.log(ShopCartService.cartList);
     let cart: Cart = JSON.parse(localStorage.getItem(this.userService.currentUser.email)!);
-    cart.state = "sending";
+    cart.state = "reserved";
 
     var maxId: number = 0;
     ShopCartService.cartList.forEach(order => {

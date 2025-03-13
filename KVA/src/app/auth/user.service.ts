@@ -115,10 +115,6 @@ export class UserService {
         return user;
     }
 
-    // getUserByPhoneNum(phoneNum: string): User{
-    //     var  user = UserService.userList.find(userToFind => userToFind.phoneNum == phoneNum)!;
-    //     return user;
-    // }
 
     isPasswordCorrect(userEmail: string, userPassword: string): boolean{
         return UserService.userList.find(userToFind => (

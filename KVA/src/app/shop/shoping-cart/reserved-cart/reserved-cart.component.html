@@ -4,11 +4,11 @@
 
         </mat-card-header>
         <mat-card-content fxLayoutAlign="center center">
-            <h2>No orders on the way</h2>
+            <h2>No reservations made</h2>
         </mat-card-content>
     </mat-card>
     <div class="listOfCarts" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="1rem" *ngIf="this.orders != null && this.orders.length != 0 &&  this.orders != undefined">
-        <h2>Your orders on the way</h2>
+        <h2>Movies you reserverd</h2>
         <mat-card fxLayout="column" fxLayoutAlign="center center" *ngFor="let order of this.orders">
             <mat-card-header>
                 
@@ -31,7 +31,7 @@
                 </div> -->
             </mat-card-content>
             <mat-card-actions fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="1rem">
-                <button (click)="cancel(order)" mat-raised-button color="warn">Cancel order</button>
+                <button (click)="cancel(order)" mat-raised-button color="warn">Cancel reservations</button>
             </mat-card-actions>
         </mat-card>
     </div>

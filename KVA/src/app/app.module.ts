@@ -21,7 +21,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ItemCommentsComponent } from './shop/item-comments/item-comments.component';
 import { ShopCartService } from './shop/shoping-cart/shopingCart.service';
 import { CurrentCartComponent } from './shop/shoping-cart/current-cart/current-cart.component';
-import { ShippingCartComponent } from './shop/shoping-cart/shipping-cart/shipping-cart.component';
+import { ShippingCartComponent } from './shop/shoping-cart/reserved-cart/reserved-cart.component';
 import { CancelledComponent } from './shop/shoping-cart/cancelled/cancelled.component';
 import { ArivedCartComponent } from './shop/shoping-cart/watched-cart/watched-cart.component';
 import { ReactiveFormsModule } from '@angular/forms';

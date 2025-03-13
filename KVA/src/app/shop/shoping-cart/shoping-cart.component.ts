@@ -10,7 +10,6 @@ import { ShopCartService } from './shopingCart.service';
 })
 export class ShopingCartComponent {
   constructor(private shopCartService: ShopCartService, private userService: UserService, private router: Router) {
-    // this.shopCartService.updateitemArrivalList();
     if(this.userService.currentUser == undefined){
       this.router.navigate(['/login']);
     }

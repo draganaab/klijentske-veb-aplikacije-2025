@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "app-kva-fitness": {
+    "app-kva-cinema": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -23,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/app-kva-fitness",
+            "outputPath": "dist/app-kva-cinema",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -72,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "app-kva-fitness:build:production"
+              "buildTarget": "app-kva-cinema:build:production"
             },
             "development": {
-              "buildTarget": "app-kva-fitness:build:development"
+              "buildTarget": "app-kva-cinema:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "app-kva-fitness:build"
+            "buildTarget": "app-kva-cinema:build"
           }
         },
         "test": {

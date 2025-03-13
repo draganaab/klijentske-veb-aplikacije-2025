@@ -15,7 +15,6 @@ export class ShopComponent implements OnInit{
   
   ngOnInit(): void {
     ShopService.itemListUpdated.subscribe(() => {
-        // ShopService.initializeItemList(this.userService);
     });
   }
 }

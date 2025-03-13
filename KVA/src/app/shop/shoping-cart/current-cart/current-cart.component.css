@@ -69,6 +69,14 @@ h3 {
     color: #ffcc00;
     margin: 0;
 }
+h2 {
+    font-size: 1.4rem;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+    color: #ffcc00;
+    margin: 0;
+}
 
 /* Button Layout */
 mat-card-actions {

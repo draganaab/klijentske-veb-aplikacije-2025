@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']  // Fix: Correct property name (was "styleUrl")
+  styleUrls: ['./login.component.css']  
 })
 export class LoginComponent {
   errorExists: boolean = false;
@@ -17,7 +17,7 @@ export class LoginComponent {
   }
 
   onSubmit(form: NgForm): void {
-    if (form.invalid) return; // Prevent submission if form is invalid
+    if (form.invalid) return; 
 
     const { email, password } = form.value;
     const user = this.userService.getUser(email);
@@ -36,7 +36,7 @@ export class LoginComponent {
     this.errorExists = false;
     this.userService.currentUser = user;
     console.log("Logged in user:", this.userService.currentUser);
-    this.router.navigate(['']); // Navigate to home page
+    this.router.navigate(['']); 
   }
 
   private showError(message: string): void {
