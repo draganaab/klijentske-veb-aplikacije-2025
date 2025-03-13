@@ -63,7 +63,7 @@ export class CurrentCartComponent implements OnInit {
     var id = ++maxId;
     cart.id = id;
     var time = new Date();
-    time.setSeconds(time.getSeconds() + 5); //prebaci u watched
+    time.setSeconds(time.getSeconds() + 5); //tajmer koji simulira vreme gledanja filma od trenutka rezervacije 
 
     this.shopCartService.addToCartList(cart, time);
     localStorage.removeItem(`${this.user.email}`);

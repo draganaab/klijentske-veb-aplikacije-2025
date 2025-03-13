@@ -9,7 +9,7 @@ import { NgForm, FormBuilder, FormGroup } from '@angular/forms';
   templateUrl: './watched-cart.component.html', 
   styleUrl: './watched-cart.component.css'
 })
-export class ArivedCartComponent implements OnInit  {
+export class WatchedCartComponent implements OnInit  {
   @ViewChildren('comment') comments!: QueryList<any>;
 
   constructor(private shopCartService: ShopCartService, private shopService: ShopService, private userService: UserService) {
@@ -18,7 +18,6 @@ export class ArivedCartComponent implements OnInit  {
   }
 
   user: User = this.userService.currentUser!;
-
   orders: Array<Cart>= [];
 
 

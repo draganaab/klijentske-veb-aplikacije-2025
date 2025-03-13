@@ -26,8 +26,6 @@ export interface Cart {
 export class ShopCartService implements OnInit{
 
     constructor(private shopService: ShopService, private userService: UserService) { 
-        this.ItemWatchedList.emit(ShopCartService.itemWatchedList);
-        console.log("itemWatched list u shoping servisu "+ShopCartService.itemWatchedList);
     }
     
     ngOnInit(): void {
@@ -35,14 +33,14 @@ export class ShopCartService implements OnInit{
     }
 
     cartListUpdated = new EventEmitter<Array<Cart>>();
-    ItemWatchedList = new EventEmitter<Array<timeWatched>>();
     ItemListUpdated = new EventEmitter<Array<Item>>();
 
+    //dodaje u listu svih korpi i obavestava ostale komponente(prozore(cancelled, watched...)) da je to uradio, takodje ovde 
+    //menja stanje u watched posle 15 sekundi i obavestava da je to uradio(Tako znaju da treba da pomere korpu u "watched" deo)
     addToCartList(cart: Cart, time: Date): void {
         ShopCartService.cartList.push(cart);
         let item: timeWatched = { order: cart, time: time};
         ShopCartService.itemWatchedList.push(item);
-        this.ItemWatchedList.emit(ShopCartService.itemWatchedList);
         this.cartListUpdated.emit(ShopCartService.cartList);
         setTimeout(() => {
             const index = ShopCartService.cartList.findIndex(c => c.id === cart.id && cart.state=="reserved");
@@ -51,7 +49,6 @@ export class ShopCartService implements OnInit{
                 cart.state="watched";
                 ShopCartService.cartList.push(cart);
                 this.cartListUpdated.emit(ShopCartService.cartList);
-                this.ItemWatchedList.emit(ShopCartService.itemWatchedList);
                 this.cartListUpdated.emit(ShopCartService.cartList);
             }
         }, 15000);
@@ -65,9 +62,12 @@ export class ShopCartService implements OnInit{
         this.ItemListUpdated.emit(ShopService.itemList);
     }
 
+    //lista gledanih Cartova
     static itemWatchedList: Array<timeWatched> =[]
+    //stanja Cartova
     states: Array<string> = ["watched", "reserved", "canceled", "temp"];
 
+    //Dodaje u, ili pravi, Cart objekat koji stavlja u localStorage
     updateCart(user: User, item: Item, seat: string): void {
         var name: string = user.email;
         var stringCart: string | null = localStorage.getItem(`${name}`);
@@ -107,6 +107,7 @@ export class ShopCartService implements OnInit{
         console.log(JSON.parse(test));
     }
 
+    //Nalazi cenu filma pomocu itema i cena
     findPrice(item: Item, seat: string): number {
         let price!: number;
         item.prices.forEach(obj => {console.log(obj.seat, seat); if (obj.seat == seat) { price = obj.price } });

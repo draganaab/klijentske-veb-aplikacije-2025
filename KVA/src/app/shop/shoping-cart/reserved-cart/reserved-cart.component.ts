@@ -9,12 +9,11 @@ import { User, UserService } from '../../../auth/user.service';
   templateUrl: './reserved-cart.component.html',
   styleUrl: './reserved-cart.component.css'
 })
-export class ShippingCartComponent implements OnInit{
-  @ViewChild('progressBar') progressBar!: ElementRef;
+export class ReservedCartComponent implements OnInit{
+  
 
   constructor(private shopCartService: ShopCartService, private shopService: ShopService, private userService: UserService) {
     this.user = this.userService.currentUser!;
-    
   }
 
   user: User = this.userService.currentUser!;
